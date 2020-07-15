@@ -11,6 +11,7 @@ class Button {
 
   void draw() {
     image(backgroundImage, x, y);
+    textAlign(CENTER, CENTER);
     textFont(font);
     fill(textColor);
     text(text, x, y);
