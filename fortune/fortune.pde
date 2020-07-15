@@ -22,11 +22,7 @@ void loadOracles() {
   Table table;
   table = loadTable("oracles.csv", "header");
   for (TableRow tableRow : table.rows()) {
-    String name = tableRow.getString("名称");
-    String description = tableRow.getString("説明");
-    String imageFile = tableRow.getString("画像ファイル");
-    PImage image = loadImage(imageFile);
-    Oracle oracle = new Oracle(name, description, image);
+    Oracle oracle = new Oracle(tableRow);
     oracles.add(oracle);
   }
 }
