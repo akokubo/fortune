@@ -5,9 +5,9 @@ class Scene {
   }
 
   void draw() {
-    image(backgroundImage, 0, 0);
+    imageMode(CENTER);
+    image(backgroundImage, width / 2.0, height / 2.0);
   }
-
   void mousePressed() {
   }
 }
