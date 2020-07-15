@@ -1,16 +1,19 @@
 PImage backgroundImage;
-// 「占う」シーン
 PImage tellFortuneBackgroundImage;
-// 「結果」シーン
-PImage chukichiBackgroundImage;
+// 託宣の一覧
+String[] oracles = {
+  "daikichi.png", 
+  "kichi.png", 
+  "chukichi.png", 
+  "shoukichi.png", 
+  "suekichi.png", 
+  "kyou.png", 
+  "daikyou.png"
+};
 
 void setup() {
   size(1024, 576);
-  // それぞれのシーンの画像を読み込む
   tellFortuneBackgroundImage = loadImage("tellFortune.png");
-  chukichiBackgroundImage = loadImage("chukichi.png");
-
-  // 最初は「占う」シーン
   backgroundImage = tellFortuneBackgroundImage;
 }
 
@@ -19,9 +22,9 @@ void draw() {
 }
 
 void mousePressed() {
-  // 画像を切り替える
   if (backgroundImage == tellFortuneBackgroundImage) {
-    backgroundImage = chukichiBackgroundImage;
+    int number = int(random(oracles.length));
+    backgroundImage = loadImage(oracles[number]);
   } else {
     backgroundImage = tellFortuneBackgroundImage;
   }
